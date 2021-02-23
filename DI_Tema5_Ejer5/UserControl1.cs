@@ -17,6 +17,7 @@ namespace DI_Tema5_Ejer5
     public partial class UserControl1 : UserControl
     {
         Color color = Color.Red;
+        string cadena;
         public UserControl1()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace DI_Tema5_Ejer5
             set
             {
                 textBox1.Text = value;
+                cadena = value.Trim();
                 Refresh();
             }
             get
@@ -88,7 +90,7 @@ namespace DI_Tema5_Ejer5
             this.Height = textBox1.Height + (20);
             textBox1.Width = this.Width - (20);
 
-            string cadena = Texto.Trim();
+            
 
             for (int i = 0; i < cadena.Length; i++)
             {
@@ -126,6 +128,8 @@ namespace DI_Tema5_Ejer5
         private void TEXTcHANGE(object sender, EventArgs e)
         {
             this.OnTextChanged(e);
+            cadena = Texto.Trim();
+            Refresh();
         }
     }
 
