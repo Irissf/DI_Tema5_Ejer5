@@ -35,12 +35,12 @@ namespace Prueba
             // userControl11
             // 
             this.userControl11.Location = new System.Drawing.Point(242, 149);
-            this.userControl11.Multilinea = false;
+            this.userControl11.Multilinea = true;
             this.userControl11.Name = "userControl11";
             this.userControl11.Size = new System.Drawing.Size(247, 40);
             this.userControl11.TabIndex = 0;
             this.userControl11.Texto = "";
-            this.userControl11.TipoDeDato = DI_Tema5_Ejer5.eTipo.TEXTUAL;
+            this.userControl11.TipoDeDato = DI_Tema5_Ejer5.eTipo.NUMERICO;
             // 
             // Form1
             // 

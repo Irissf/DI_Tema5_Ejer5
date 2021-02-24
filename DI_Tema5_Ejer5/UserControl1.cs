@@ -18,6 +18,9 @@ namespace DI_Tema5_Ejer5
     {
         Color color = Color.Red;
         string cadena;
+        bool correcto;
+
+
         public UserControl1()
         {
             InitializeComponent();
@@ -36,7 +39,6 @@ namespace DI_Tema5_Ejer5
             set
             {
                 textBox1.Text = value;
-                cadena = value.Trim();
                 Refresh();
             }
             get
@@ -86,50 +88,63 @@ namespace DI_Tema5_Ejer5
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            base.OnPaint(e);
+
             textBox1.Location = new Point(10, 10);
             this.Height = textBox1.Height + (20);
             textBox1.Width = this.Width - (20);
 
             
-
-            for (int i = 0; i < cadena.Length; i++)
-            {
-                if (tipoDeDato == eTipo.NUMERICO)
-                {
-                    if (cadena[i] >= 48 && cadena[i] <= 57)
-                    {
-                        color = Color.Green;
-                    }
-                    else
-                    {
-                        color = Color.Red;
-                    }
-                }
-                else
-                {
-                    if (cadena[i] >= 65 && cadena[i] <= 90 || cadena[i] >= 97 && cadena[i] <= 122)
-                    {
-                        color = Color.Green;
-                    }
-                    else
-                    {
-                        color = Color.Red;
-                    }
-                }
-            }
-
-            base.OnPaint(e);
             Graphics g = e.Graphics;
             Pen pen = new Pen(color);
 
             g.DrawRectangle(pen, 5, 5, textBox1.Width + 10, textBox1.Height + 10);
         }
 
-        private void TEXTcHANGE(object sender, EventArgs e)
+        private void TextChange(object sender, EventArgs e)
         {
-            this.OnTextChanged(e);
-            cadena = Texto.Trim();
+            correcto = true;
+            //this.OnTextChanged(e);
+            validarCadena(textBox1.Text);
             Refresh();
+        }
+
+        private void validarCadena(string cadena)
+        {
+            for (int i = 0; i < cadena.Length; i++)
+            {
+                if (tipoDeDato == eTipo.NUMERICO)
+                {
+                    if (cadena[i] >= 48 && cadena[i] <= 57)
+                    {
+                        if (correcto)
+                        {
+                            color = Color.Green;
+                        }
+                        
+                    }
+                    else
+                    {
+                        color = Color.Red;
+                        correcto = false;
+                    }
+                }
+                else
+                {
+                    if (cadena[i] >= 65 && cadena[i] <= 90 || cadena[i] >= 97 && cadena[i] <= 122)
+                    {
+                        if (correcto)
+                        {
+                            color = Color.Green;
+                        }
+                    }
+                    else
+                    {
+                        color = Color.Red;
+                        correcto = false;
+                    }
+                }
+            }
         }
     }
 
