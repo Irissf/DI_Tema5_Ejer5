@@ -17,7 +17,6 @@ namespace DI_Tema5_Ejer5
     public partial class UserControl1 : UserControl
     {
         Color color = Color.Red;
-        string cadena;
         bool correcto;
 
 
@@ -115,7 +114,7 @@ namespace DI_Tema5_Ejer5
             {
                 if (tipoDeDato == eTipo.NUMERICO)
                 {
-                    if (cadena[i] >= 48 && cadena[i] <= 57)
+                    if (cadena[i] >= 48 && cadena[i] <= 57 || cadena[i] == 13 || cadena[i] == 10)
                     {
                         if (correcto)
                         {
