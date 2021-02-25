@@ -40,7 +40,7 @@ namespace Prueba
             this.userControl11.Size = new System.Drawing.Size(247, 40);
             this.userControl11.TabIndex = 0;
             this.userControl11.Texto = "";
-            this.userControl11.TipoDeDato = DI_Tema5_Ejer5.eTipo.NUMERICO;
+            this.userControl11.TipoDeDato = DI_Tema5_Ejer5.eTipo.TEXTUAL;
             // 
             // Form1
             // 

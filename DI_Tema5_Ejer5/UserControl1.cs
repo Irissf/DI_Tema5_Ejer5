@@ -130,7 +130,7 @@ namespace DI_Tema5_Ejer5
                 }
                 else
                 {
-                    if (cadena[i] >= 65 && cadena[i] <= 90 || cadena[i] >= 97 && cadena[i] <= 122 || cadena[i] == 13 || cadena[i] == 10)
+                    if (cadena[i] >= 65 && cadena[i] <= 90 || cadena[i] >= 97 && cadena[i] <= 122 || cadena[i] == 13 || cadena[i] == 10 || cadena[i] == 32)
                     {
                         if (correcto)
                         {
